@@ -7,17 +7,23 @@ public:
         printf("동물소리");
     }
     void test() {
-        printf("Animal::test()");
+        printf("Animal::test()\n");
+    }
+    void walk() {
+        printf("Animal::walk()\n");
     }
 };
 
 class Cat : public Animal {
     public:
-    void sound() {
+    void sound() { //메서드 오버라이딩 됨
         printf("냐옹\n");
     }
     void test2() {
-        printf("Animal::test2()\n");
+        printf("Cat::test2()\n");
+    }
+    void walk() { //메서드 오버라이딩 되지 않아 씹힘
+        printf("Cat::walk()\n");
     }
 };
 
@@ -26,6 +32,7 @@ int main() {
     animal->sound();//냐옹
     animal->test();//Animal::test()
     //animal->test2(); 찾을 수 없음
+    animal->walk(); //Animal::walk()
     return 0;
     // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
