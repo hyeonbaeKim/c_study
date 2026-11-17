@@ -27,7 +27,9 @@ foreach(dir IN LISTS _subdirs)
             set(_target ${dir}_${_name})
         endif()
 
-        set(_srcs ${cpp})
+        set(_srcs ${cpp}
+                operatorOverloading/Ostream.cpp
+                operatorOverloading/Ostream.h)
         if(EXISTS ${_path}/${_name}.h)
             list(APPEND _srcs ${_path}/${_name}.h)
         endif()
