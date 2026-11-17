@@ -1,4 +1,9 @@
 #include <iostream>
+/*
+예를 들어 inheritance/main.cpp처럼 새 폴더와 main.cpp를 만듭니다.
+CLion에서 File → Reload CMake Project를 한 번 눌러 줍니다.
+Run 설정 드롭다운에 inheritance가 생기면, 골라서 빌드하거나 실행하면 됩니다.
+*/
 
 class Animal {
 public:
