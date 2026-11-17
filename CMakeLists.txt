@@ -27,7 +27,11 @@ foreach(dir IN LISTS _subdirs)
             set(_target ${dir}_${_name})
         endif()
 
-        set(_srcs ${cpp})
+        set(_srcs ${cpp}
+                access/BankAccount.cpp
+                access/BankAccount.h
+                access/Speaker.cpp
+                access/Speaker.h)
         if(EXISTS ${_path}/${_name}.h)
             list(APPEND _srcs ${_path}/${_name}.h)
         endif()
