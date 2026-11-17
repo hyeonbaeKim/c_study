@@ -20,7 +20,7 @@ public:
 
     void println() { std::cout << "( " << real << " , " << img << " ) " << std::endl; }
 
-    //const 멤버함수 : 이 멤버함수는 자기 객체(*this)를 수정하지 않는다는 약속
+    //맨 마지막의 const 멤버함수 : 이 멤버함수는 자기 객체(*this)를 수정하지 않는다는 약속
     Complex operator+(const Complex& c) const;
     Complex operator-(const Complex& c) const;
     Complex operator*(const Complex& c) const;
