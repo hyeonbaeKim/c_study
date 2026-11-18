@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if(MSVC)
     add_compile_options(/utf-8)
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    add_compile_options(-finput-charset=UTF-8 -fexec-charset=CP949)
+    add_compile_options(-finput-charset=UTF-8)
 endif()
 
 file(GLOB _cpps CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
