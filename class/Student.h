@@ -7,6 +7,7 @@
 #include <string>
 
 class Student {
+public:
     std::string name;
     int age;
     int grade;
