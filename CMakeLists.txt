@@ -45,7 +45,12 @@ foreach(cpp IN LISTS _cpps)
         set(_target "access_Child_Child")
     endif()
 
-    set(_sources "${cpp}")
+    set(_sources "${cpp}"
+            poly/casting/CastingMain2.cpp
+            poly/casting/CastingMain3.cpp
+            poly/casting/CastingMain4.cpp
+            poly/casting/CastingMain4_1.cpp
+            poly/casting/CastingMain5.cpp)
     get_filename_component(_source_dir "${cpp}" DIRECTORY)
     get_filename_component(_source_name "${cpp}" NAME_WE)
     if(EXISTS "${_source_dir}/${_source_name}.h")
