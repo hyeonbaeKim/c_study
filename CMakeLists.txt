@@ -60,6 +60,10 @@ foreach(cpp IN LISTS _cpps)
         list(APPEND _sources "poly/Parent.cpp" "poly/Child.cpp")
     endif()
 
+    if(_relative_path STREQUAL "poly/casting/CastingMain1.cpp")
+        list(APPEND _sources "poly/Child.cpp")
+    endif()
+
     add_executable("${_target}" ${_sources})
     if(WIN32)
         target_sources("${_target}" PRIVATE "${_utf8_console_source}")
