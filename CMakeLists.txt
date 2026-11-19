@@ -45,12 +45,7 @@ foreach(cpp IN LISTS _cpps)
         set(_target "access_Child_Child")
     endif()
 
-    set(_sources "${cpp}"
-            poly/casting/CastingMain2.cpp
-            poly/casting/CastingMain3.cpp
-            poly/casting/CastingMain4.cpp
-            poly/casting/CastingMain4_1.cpp
-            poly/casting/CastingMain5.cpp)
+    set(_sources "${cpp}")
     get_filename_component(_source_dir "${cpp}" DIRECTORY)
     get_filename_component(_source_name "${cpp}" NAME_WE)
     if(EXISTS "${_source_dir}/${_source_name}.h")
@@ -65,8 +60,12 @@ foreach(cpp IN LISTS _cpps)
         list(APPEND _sources "poly/Parent.cpp" "poly/Child.cpp")
     endif()
 
-    if(_relative_path STREQUAL "poly/casting/CastingMain1.cpp")
+    if(_relative_path MATCHES "^poly/casting/CastingMain(1|2|4|4_1)\\.cpp$")
         list(APPEND _sources "poly/Child.cpp")
+    endif()
+
+    if(_relative_path STREQUAL "poly/casting/CastingMain3.cpp")
+        list(APPEND _sources "poly/Parent.cpp" "poly/Child.cpp")
     endif()
 
     add_executable("${_target}" ${_sources})

@@ -6,15 +6,17 @@ int main() {
     다운캐스팅은 잘못하면 심각한 런타임오류를 발생시킬 수 있다.
     */
     Parent* parent1 = new Child(); //(부모와 자식 각각 따로 만들어진 객체)
+    //parent1->childMethod(); 오류
 
-    //다운캐스팅1
+    //다운캐스팅1. 런타임오류 발생 안하는 경우
     Child* child1 = (Child*)parent1; //자식은 부모를 담을 수 없으므로 반드시 형변환 (주소공유)
     child1->childMethod(); //문제없음
 
     Parent* parent2 = new Parent(); //부모만 만들어진 객체
+    //parent2->childMethod(); 오류
 
     /*
-    다운캐스팅2. 런타임오류발생
+    다운캐스팅2. 런타임 오류 발생하는 경우
     Child* child2 = (Child*)parent2; //자식은 부모를 담을 수 없으므로 반드시 형변환 (주소공유)
     주소공유되며 parent2가 가리키는 Parent(Child는 생성되지 않음 )를 포인팅하는데 범위가 Child로 해석됨
     child2->childMethod(); //런타임에러 발생
