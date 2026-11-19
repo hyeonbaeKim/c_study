@@ -10,6 +10,22 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     add_compile_options(-finput-charset=UTF-8)
 endif()
 
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    add_compile_options(-fexec-charset=UTF-8)
+endif()
+
+if(WIN32)
+    set(_utf8_console_source "${CMAKE_CURRENT_BINARY_DIR}/utf8_console.cpp")
+    file(WRITE "${_utf8_console_source}"
+        "#include <windows.h>\n"
+        "namespace {\n"
+        "struct Utf8Console {\n"
+        "    Utf8Console() { SetConsoleOutputCP(CP_UTF8); }\n"
+        "};\n"
+        "Utf8Console utf8Console;\n"
+        "}\n")
+endif()
+
 file(GLOB_RECURSE _cpps CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 
 foreach(cpp IN LISTS _cpps)
@@ -41,4 +57,7 @@ foreach(cpp IN LISTS _cpps)
     endif()
 
     add_executable("${_target}" ${_sources})
+    if(WIN32)
+        target_sources("${_target}" PRIVATE "${_utf8_console_source}")
+    endif()
 endforeach()
