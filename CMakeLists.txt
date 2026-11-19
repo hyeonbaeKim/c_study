@@ -56,6 +56,10 @@ foreach(cpp IN LISTS _cpps)
         list(APPEND _sources "access/acesss1/Parent.cpp")
     endif()
 
+    if(_relative_path STREQUAL "poly/PolyMain.cpp")
+        list(APPEND _sources "poly/Parent.cpp" "poly/Child.cpp")
+    endif()
+
     add_executable("${_target}" ${_sources})
     if(WIN32)
         target_sources("${_target}" PRIVATE "${_utf8_console_source}")
