@@ -12,7 +12,7 @@ private:
     int& value; //반드시 생성 시 참조 대상을 정해야 함
 
 public:
-    Example1(int id, int& value);
+    Example1(int id, int& value); //초기화리스트는 여기 말고 .cpp에서 !
 };
 
 
