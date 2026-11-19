@@ -27,6 +27,11 @@ MemberConstruct::MemberConstruct(std::string name, int age) {
 int main() {
     MemberConstruct memberConstruct("kim",32);
     MemberConstruct memberConstruct2("Lee",33,10);
+
+    /*
+        생성자를 오버로딩 한 덕분에 성적입력이 꼭 필요한 경우에는 grade가 있는 생성자를 호출하면 되고
+        그렇지 않은 경우에는 grade가 없는 생성자를 호출하면 된다.
+     */
 }
 
 
