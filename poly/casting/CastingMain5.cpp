@@ -1,8 +1,10 @@
 #include <iostream>
 
+//dynamic_cast 예제 만들기 위해서 virtual키워드 들어간 부모클래스 생성함
+
 class oopParent {
 public :
-    virtual ~oopParent() = default; // dynamic_cast에 필요한 다형성
+    virtual ~oopParent() = default; // dynamic_cast에 필요한 다형성********
 };
 
 class oopChild : public oopParent {

@@ -1,5 +1,5 @@
 #include "Child.h"
-#include "../Parent.h"
+#include "Parent.h"
 
 int main() {
     /*

@@ -1,5 +1,5 @@
-#include <iostream>
-#include "../Parent.h"
+
+#include "Parent.h"
 #include "Child.h"
 
 int main() {
@@ -12,6 +12,7 @@ int main() {
     //Child value = *(Child*)poly; // 포인터가 가리키는
 
     child->childMethod(); //다운캐스팅으로 해결
+    //poly->childMethod(); 컴파일에러(왜? 위에서 아래로 찾지 못하니까) -> "다운캐스팅"으로 해결할 수 있다. 이것을 해결함
 
     //여전히 그냥 Child* child = new Child(); 하는게 더 나은거 같은데?
     return 0;

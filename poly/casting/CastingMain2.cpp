@@ -1,5 +1,5 @@
 #include "Child.h"
-#include "../Parent.h"
+#include "Parent.h"
 
 int main() {
     Parent* poly = new Child(); //(부모와 자식 각각 따로 만들어진 객체)

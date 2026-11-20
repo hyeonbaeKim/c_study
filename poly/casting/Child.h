@@ -4,7 +4,7 @@
 
 #ifndef C_STUDY_CHILD_H
 #define C_STUDY_CHILD_H
-#include "../Parent.h"
+#include "Parent.h"
 
 
 class Child : public Parent {

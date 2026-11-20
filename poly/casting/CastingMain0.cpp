@@ -1,5 +1,5 @@
-#include "../Parent.h"
-#include "../Child.h"
+#include "Parent.h"
+#include "Child.h"
 int main() {
     Parent* parent = new Parent(); //new Parent(); 통해 Parent객체만 생성되고 parent로 Parent객체만 포인팅
     parent->parentMethod();
@@ -15,6 +15,8 @@ int main() {
      즉 일반적으로 아래에서 위로 찾을 순 있지만 위에서 아래로 찾을 순 없음
      */
     poly->parentMethod(); //poly가 Parent객체만 포인팅중이라서 Parent객체에서 찾은 것.
+    //poly->childMethod(); 컴파일에러. 왜냐면 위에서 밑으로 찾을 수 없음
+
 
     /*
      이렇게 위에서 아래로 찾고 싶은 경우엔 캐스팅이 필요하다.

@@ -68,6 +68,13 @@ foreach(cpp IN LISTS _cpps)
         list(APPEND _sources "poly/casting/Parent.cpp" "poly/casting/Child.cpp")
     endif()
 
+    if(_relative_path MATCHES "^poly/ex1/AnimalSoundMain[12]\\.cpp$")
+        list(APPEND _sources
+                "poly/ex1/Cat.cpp"
+                "poly/ex1/Dog.cpp"
+                "poly/ex1/Cow.cpp")
+    endif()
+
     add_executable("${_target}" ${_sources})
     if(WIN32)
         target_sources("${_target}" PRIVATE "${_utf8_console_source}")
