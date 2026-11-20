@@ -1,6 +1,6 @@
 #include <iostream>
 #include "../Parent.h"
-#include "../Child.h"
+#include "Child.h"
 
 int main() {
     Parent* poly = new Child();

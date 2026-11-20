@@ -56,16 +56,16 @@ foreach(cpp IN LISTS _cpps)
         list(APPEND _sources "access/acesss1/Parent.cpp")
     endif()
 
-    if(_relative_path STREQUAL "poly/PolyMain.cpp")
-        list(APPEND _sources "poly/Parent.cpp" "poly/Child.cpp")
+    if(_relative_path STREQUAL "poly/casting/CastingMain0.cpp")
+        list(APPEND _sources "poly/casting/Parent.cpp" "poly/casting/Child.cpp")
     endif()
 
     if(_relative_path MATCHES "^poly/casting/CastingMain(1|2|4|4_1)\\.cpp$")
-        list(APPEND _sources "poly/Child.cpp")
+        list(APPEND _sources "poly/casting/Child.cpp")
     endif()
 
     if(_relative_path STREQUAL "poly/casting/CastingMain3.cpp")
-        list(APPEND _sources "poly/Parent.cpp" "poly/Child.cpp")
+        list(APPEND _sources "poly/casting/Parent.cpp" "poly/casting/Child.cpp")
     endif()
 
     add_executable("${_target}" ${_sources})

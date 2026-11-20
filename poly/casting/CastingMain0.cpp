@@ -1,5 +1,5 @@
-#include "Parent.h"
-#include "Child.h"
+#include "../Parent.h"
+#include "../Child.h"
 int main() {
     Parent* parent = new Parent(); //new Parent(); 통해 Parent객체만 생성되고 parent로 Parent객체만 포인팅
     parent->parentMethod();

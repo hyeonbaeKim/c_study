@@ -1,4 +1,4 @@
-#include "../Child.h"
+#include "Child.h"
 #include "../Parent.h"
 
 int main() {
