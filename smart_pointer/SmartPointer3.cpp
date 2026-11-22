@@ -5,12 +5,13 @@ int main() {
     std::string a = "이창민";
     std::cout << "a: " << a << std::endl; //a: 이창민
 
-    std::string b = std::move(a); // a는 rvlua됬고 이동 연산을 선택할 수 있게 됌
+    std::string b = std::move(a); // a를 rvalue처럼 만들어서 string의 이동 생성자가 선택될 수 있게 해요.
+    //그래서 문자열 자원을 넘길 수 있습니다.
     std::cout << "b: " << b << std::endl; //b: 이창민
     std::cout << "a: " << a << std::endl; //a:
 
     int a1 =3;
-    int b1 = std::move(a1); //a는 rvlua됬고 이동 연산을 선택할 수 있게 됌
+    int b1 = std::move(a1); //a는 rvlue됬고 이동 연산을 선택할 수 있게 됌
 
     std::cout << "b: " << b1 << std::endl; //3
     std::cout << "a: " << a1 << std::endl; //3
@@ -24,7 +25,8 @@ int main() {
     */
 
     char* str1 = "kim";
-    char* str2 = std::move(str1); //str1은 rval
+    char* str2 = std::move(str1); //str1을 이동 가능한 형태(char*&&)로 바꾸지만,
+    //raw pointer에는 자원 소유권을 넘기는 이동 동작이 없습니다.
     std::cout << "str1: " << str1 << std::endl; //kim
     std::cout << "str2: " << str2 << std::endl; //kim
     //char*는 문자열을 관리하는 객체가 아니라 주소 하나를 담는 변수예요.
