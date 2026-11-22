@@ -75,6 +75,14 @@ foreach(cpp IN LISTS _cpps)
                 "poly/ex1/Cow.cpp")
     endif()
 
+    if(_relative_path STREQUAL "poly/ex2/AnimalPolyMain1.cpp")
+        list(APPEND _sources
+                "poly/ex2/Animal.cpp"
+                "poly/ex2/Cat.cpp"
+                "poly/ex2/Dog.cpp"
+                "poly/ex2/Cow.cpp")
+    endif()
+
     add_executable("${_target}" ${_sources})
     if(WIN32)
         target_sources("${_target}" PRIVATE "${_utf8_console_source}")
