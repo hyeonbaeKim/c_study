@@ -46,7 +46,10 @@ foreach(cpp IN LISTS _cpps)
     endif()
 
     set(_sources "${cpp}"
-            smart_pointer/SmartPointer5.cpp)
+            smart_pointer/SmartPointer5.cpp
+            smart_pointer/SmartPointer6.cpp
+            smart_pointer/SmartPointer7.cpp
+            smart_pointer/SmartPointer8.cpp)
     get_filename_component(_source_dir "${cpp}" DIRECTORY)
     get_filename_component(_source_name "${cpp}" NAME_WE)
     if(EXISTS "${_source_dir}/${_source_name}.h")
