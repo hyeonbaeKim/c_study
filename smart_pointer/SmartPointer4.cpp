@@ -16,6 +16,8 @@ public:
     Example& operator=(const Example&) = delete;
 
     Example(Example&& rhs) noexcept : n(rhs.n), p(rhs.p) { //이동생성자
+        //이동생성자에서 n(rhs.n), p(rhs.p)부분을 본문에 넣으면 먼저 0,nullptr로 초기화 한 후 대입하는거라
+        //비효율적이게 된다. 그래서 그냥 객체생성과 동시에 값 넣어주려고 초기화리스트 사용한것.
         //delete[] p; 이동생성자에는 이 코드 넣지 않는다. 왜냐면 이동대입연산자와는 달리 새로 생기는 객체라
         //기존객체가 소유하던 p가 없기 때문임
         rhs.n = 0;
